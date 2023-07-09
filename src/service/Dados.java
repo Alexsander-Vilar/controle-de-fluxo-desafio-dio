@@ -1,7 +1,13 @@
+package service;
+
+import exception.ParametrosInvalidosException;
+
 import java.util.Scanner;
 
-public class Contador {
-    public static void main(String[] args) {
+import static service.Contador.contar;
+
+public class Dados {
+    public static void dados(){
         Scanner terminal = new Scanner(System.in);
         System.out.println("Digite o primeiro parâmetro");
         int parametroUm = terminal.nextInt();
@@ -16,18 +22,5 @@ public class Contador {
             System.out.println("O segundo parâmetro deve ser maior que o primeiro");
             //imprimir a mensagem: O segundo parâmetro deve ser maior que o primeiro
         }
-
-    }
-
-    static void contar(int parametroUm, int parametroDois) throws ParametrosInvalidosException {
-        //validar se parametroUm é MAIOR que parametroDois e lançar a exceção
-        if (parametroUm >= parametroDois) {
-            throw new ParametrosInvalidosException("O segundo parâmetro deve ser maior que o primeiro");
-        }
-        int contagem = parametroDois - parametroUm;
-        for (int i = 0; i < contagem; i++) {
-            System.out.println("Imprimindo o número " + i);
-        }
-        //realizar o for para imprimir os números com base na variável contagem
     }
 }
